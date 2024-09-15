@@ -51,19 +51,3 @@ Envio do arquivo ZIP: Envie o arquivo compactado com todos os arquivos do projet
 Este README.md serve como um guia para o desenvolvimento do projeto.
 É fundamental seguir as instruções e prazos estabelecidos.
 Em caso de dúvidas, consulte o professor ou monitor.
-
-## Dicas
-
-Utilize um editor de código: Recomenda-se utilizar um editor de código com suporte a React, como o Visual Studio Code.
-Explore a documentação do React: A documentação oficial do React é uma excelente fonte de informações.
-Participe dos fóruns e comunidades: Interaja com outros desenvolvedores para tirar dúvidas e aprender novas técnicas.
-Com este guia, você está pronto para iniciar o seu projeto React!
-
-Lembre-se: Um README.md bem estruturado facilita a compreensão do seu projeto por outras pessoas.
-
-Para personalizar ainda mais este README, você pode adicionar:
-
-Tecnologias utilizadas: Uma lista das tecnologias e ferramentas utilizadas no projeto.
-Diagrama de arquitetura: Um diagrama que mostra a organização dos componentes e a comunicação entre eles.
-Exemplos de código: Trechos de código relevantes para ilustrar conceitos importantes.
-Contribuições: Informações sobre como contribuir para o projeto.
