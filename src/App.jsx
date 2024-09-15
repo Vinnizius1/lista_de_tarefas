@@ -19,7 +19,7 @@ function App() {
     }
   }
 
-  //
+  // Função para adicionar uma nova tarefa
   const adicionarTarefa = () => {
     // Criar uma nova tarefa
     const tarefa = new Tarefa(titulo, descricao);
@@ -30,6 +30,15 @@ function App() {
     setDescricao("");
   };
 
+  // Função para remover tarefa
+  const removerTarefa = id => {
+    // Remover a tarefa
+    const tarefasFiltradas = tarefas.filter(tarefa => tarefa.id !== id);
+    // Atualizar o estado de tarefas
+    setTarefas(tarefasFiltradas);
+  };
+
+  // Função para renderizar a lista de tarefas
   return (
     <>
       <h1>Lista de Tarefas</h1>
@@ -54,11 +63,14 @@ function App() {
 
       <button onClick={adicionarTarefa}>Adicionar Tarefa</button>
 
-      {/*  */}
+      {/* Função map para renderizar cada tarefa */}
       <ul>
-        {tarefas.map(tarefa => (
-          <li key={tarefa.id}>
-            {tarefa.titulo} - {tarefa.descricao}
+        {/* Destructuring para pegar as propriedades da tarefa */}
+        {tarefas.map(({ id, titulo, descricao }) => (
+          <li key={id}>
+            <h3>{titulo}</h3>
+            <p>{descricao}</p>
+            <button onClick={() => removerTarefa(id)}>Remover Tarefa</button>
           </li>
         ))}
       </ul>
