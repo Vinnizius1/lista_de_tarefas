@@ -1,23 +1,22 @@
 import { useState } from "react";
 import "./App.css";
 
+// Classe para criar objetos de tarefas
+class Tarefa {
+  constructor(titulo, descricao) {
+    // Definir as propriedades da tarefa
+    this.titulo = titulo;
+    this.descricao = descricao;
+    // Gerar um ID único para cada tarefa
+    this.id = Math.random().toString(16).substring(2, 8);
+  }
+}
+
 function App() {
   // useState para controlar o estado da aplicação
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
   const [tarefas, setTarefas] = useState([]);
-
-  // Classe para criar objetos de tarefas
-  class Tarefa {
-    constructor(titulo, descricao) {
-      // Definir as propriedades da tarefa
-      this.titulo = titulo;
-      this.descricao = descricao;
-      // Gerar um ID para cada tarefa
-      this.id = Math.random().toString(16).substring(2, 8);
-      console.log(this.id);
-    }
-  }
 
   // Função para adicionar uma nova tarefa
   const adicionarTarefa = () => {
