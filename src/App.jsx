@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import ListaDeTarefas from "./components/ListaDeTarefas";
 
 // Classe para criar objetos de tarefas
 class Tarefa {
@@ -62,17 +63,7 @@ function App() {
 
       <button onClick={adicionarTarefa}>Adicionar Tarefa</button>
 
-      {/* Função map para renderizar cada tarefa */}
-      <ul>
-        {/* Destructuring para pegar as propriedades da tarefa */}
-        {tarefas.map(({ id, titulo, descricao }) => (
-          <li key={id}>
-            <h3>{titulo}</h3>
-            <p>{descricao}</p>
-            <button onClick={() => removerTarefa(id)}>Remover Tarefa</button>
-          </li>
-        ))}
-      </ul>
+      <ListaDeTarefas tarefas={tarefas} removerTarefa={removerTarefa} />
     </>
   );
 }
