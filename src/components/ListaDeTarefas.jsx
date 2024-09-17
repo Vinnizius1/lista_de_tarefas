@@ -8,7 +8,11 @@ const ListaDeTarefas = ({ tarefas, removerTarefa }) => {
         <li key={id}>
           <h3>{titulo}</h3>
           <p>{descricao}</p>
-          <button type="button" onClick={() => removerTarefa(id)}>
+          <button
+            className="remover-tarefa"
+            type="button"
+            onClick={() => removerTarefa(id)}
+          >
             Remover Tarefa
           </button>
         </li>

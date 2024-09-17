@@ -1,5 +1,4 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-
+input {
+  margin: 0.5rem;
+  padding: 0.5rem;
 }

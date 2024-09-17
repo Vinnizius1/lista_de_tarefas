@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./App.css";
 import ListaDeTarefas from "./components/ListaDeTarefas";
 
@@ -19,6 +19,9 @@ function App() {
   const [descricao, setDescricao] = useState("");
   const [tarefas, setTarefas] = useState([]);
 
+  // Cria uma referência para o campo de título
+  const inputRefTitulo = useRef(null);
+
   // Função para adicionar uma nova tarefa
   const adicionarTarefa = event => {
     // Evitar que o formulário seja enviado
@@ -28,7 +31,6 @@ function App() {
       alert("Por favor, preencha todos os campos.");
       return;
     }
-
     // Criar uma nova tarefa
     const tarefa = new Tarefa(titulo, descricao);
     // Adicionar a tarefa ao estado por meio de uma função de atualização
@@ -36,6 +38,8 @@ function App() {
     // Limpar os inputs
     setTitulo("");
     setDescricao("");
+    // Colocar o foco no campo de título
+    inputRefTitulo.current.focus();
   };
 
   // Função para remover tarefa
@@ -58,6 +62,8 @@ function App() {
           type="text"
           placeholder="Título da tarefa"
           value={titulo}
+          // Associar a referência ao campo de título
+          ref={inputRefTitulo}
           onChange={e => setTitulo(e.target.value)}
         />
 
