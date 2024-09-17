@@ -20,7 +20,15 @@ function App() {
   const [tarefas, setTarefas] = useState([]);
 
   // Função para adicionar uma nova tarefa
-  const adicionarTarefa = () => {
+  const adicionarTarefa = event => {
+    // Evitar que o formulário seja enviado
+    event.preventDefault();
+    // Verificar se o campo de título foi preenchido
+    if (titulo === "" || descricao === "") {
+      alert("Por favor, preencha todos os campos.");
+      return;
+    }
+
     // Criar uma nova tarefa
     const tarefa = new Tarefa(titulo, descricao);
     // Adicionar a tarefa ao estado por meio de uma função de atualização
@@ -43,25 +51,27 @@ function App() {
     <>
       <h1>Lista de Tarefas</h1>
 
-      <label htmlFor="titulo">Título</label>
-      <input
-        id="titulo"
-        type="text"
-        placeholder="Título da tarefa"
-        value={titulo}
-        onChange={e => setTitulo(e.target.value)}
-      />
+      <form onSubmit={adicionarTarefa}>
+        <label htmlFor="titulo">Título</label>
+        <input
+          id="titulo"
+          type="text"
+          placeholder="Título da tarefa"
+          value={titulo}
+          onChange={e => setTitulo(e.target.value)}
+        />
 
-      <label htmlFor="descricao">Descrição</label>
-      <input
-        id="descricao"
-        type="text"
-        placeholder="Descrição da tarefa"
-        value={descricao}
-        onChange={e => setDescricao(e.target.value)}
-      />
+        <label htmlFor="descricao">Descrição</label>
+        <input
+          id="descricao"
+          type="text"
+          placeholder="Descrição da tarefa"
+          value={descricao}
+          onChange={e => setDescricao(e.target.value)}
+        />
 
-      <button onClick={adicionarTarefa}>Adicionar Tarefa</button>
+        <button type="submit">Adicionar Tarefa</button>
+      </form>
 
       <ListaDeTarefas tarefas={tarefas} removerTarefa={removerTarefa} />
     </>
