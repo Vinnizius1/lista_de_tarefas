@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import ListaDeTarefas from "./components/ListaDeTarefas";
-import Formulario from "./components/formulario";
+import Formulario from "./components/Formulario";
 
 function App() {
   // Lista de tarefas é inicialmente um array vazio e depois atualizado pela função "adicionarTarefa" enviada para o componente Formulario (filho)
