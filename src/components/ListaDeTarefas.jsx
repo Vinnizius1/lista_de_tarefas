@@ -1,6 +1,7 @@
 // Desativando a regra eslint para prop-types neste arquivo
 /* eslint-disable react/prop-types */
 
+// Itera sobre cada tarefa e renderiza cada uma de forma dinâmica no componente PAI ("App")
 const ListaDeTarefas = ({ tarefas, removerTarefa }) => {
   return (
     <ul>
